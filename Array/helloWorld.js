@@ -231,7 +231,7 @@ function reverseArray(arr) {
 const arrayReverse = [1, 4, 3, 2, 6, 5];
 // console.log(reverseArray(arrayReverse), "Reverse array");
 
-// Basic problem: Rotate an Array - Clockwise or Right
+// Basic problem 7: Rotate an Array - Clockwise or Right
 // Input: arr[] = {1, 2, 3, 4, 5, 6}, d = 2
 // Output: {5, 6, 1, 2, 3, 4}
 // Explanation: After first right rotation, arr[] becomes {6, 1, 2, 3, 4, 5}
@@ -250,4 +250,151 @@ function arrRotation(arr, d) {
 }
 
 const rotateThis = [1, 2, 3, 4, 5, 6];
-console.log(arrRotation(rotateThis, 2), "Rotation of Array");
+// console.log(arrRotation(rotateThis, 2), "Rotation of Array");
+
+// Easy problem 8: Largest Element in an Array in Javascript
+// Input : [10, 15, 38, 20, 13];
+// Output: 38
+// Here we will see the 38 is the largest elements in the given array
+function largestInArr(arr) {
+   let largest = -1;
+   for (i = 0; i < arr.length; i++) {
+      if (arr[i] > largest) {
+         largest = arr[i];
+      }
+   }
+   return largest;
+}
+const largestInThis = [10, 15, 38, 20, 13];
+// console.log(largestInArr(largestInThis), "Largest element");
+
+// Easy problem 9: Second Largest Element in Array
+// Input: arr[] = [12, 35, 1, 10, 34, 1]
+// Output: 34
+// Explanation: The largest element of the array is 35 and the second largest element is 34.
+
+// Input: arr[] = [10, 5, 10]
+// Output: 5
+// Explanation: The largest element of the array is 10 and the second largest element is 5.
+function secLargestinArr(arr) {
+   let largest = arr[1];
+   let secondLargest = arr[2];
+   for (i = 0; i < arr.length; i++) {
+      if (arr[i] > largest) {
+         secondLargest = largest;
+         largest = a[i];
+      }
+      if (arr[i] < largest && arr[i] > secondLargest && arr[i] !== largest) {
+         secondLargest = arr[i];
+      }
+   }
+   return secondLargest;
+}
+const findSecondLargestInArr = [12, 35, 1, 10, 34, 1, 76];
+// console.log(secLargestinArr(findSecondLargestInArr), "Second largest in array");
+
+// Easy problem 10:Check if array is sorted in Javascript
+// Input : const arr = [1, 2, 3, 4, 5]; 
+// Output : true
+// Input : const arr = [3, 1, 4, 2, 5];
+// Output : false
+function isArraySorted(arr) {
+   for (i = 0; i < arr.length; i++) {
+      if (arr[i] > arr[i + 1]) {
+         return false;
+      }
+   }
+   return true;
+}
+const array = [1, 2, 3, 4, 5];
+// console.log(isArraySorted(array), "Array of the section.");
+
+// Easy problem 11:Reverse an Array in Javascript
+
+// Easy problem 12:Move all zeros to end in Javascript
+// Input :  arr[] = {1, 2, 0, 4, 3, 0, 5, 0};
+// Output : arr[] = {1, 2, 4, 3, 5, 0, 0};
+function moveAllZeroToEnd(arr) {
+   let i = 0;
+   for (j = 0; j < arr.length; j++) {
+      if (arr[j] != 0) {
+         arr[i] = arr[j];
+         i++;
+      }
+   }
+   while (i < arr.length) {
+      arr[i] = 0;
+      i++;
+   }
+   return arr;
+}
+const inputArrForZero = [1, 2, 0, 4, 3, 0, 5, 0];
+// console.log(moveAllZeroToEnd(inputArrForZero), "Moves all zeros to end!");
+
+// Easy problem 13:Left Rotate by One in an Array in JavaScript
+// Original Array: [ 1, 2, 3, 4, 5 ]
+// Array after Left Rotation : [ 2, 3, 4, 5, 1 ]
+
+function leftRotateArrAY(arr, d) {
+   const n = arr.length;
+   for (i = 0; i < d; i++) {
+      let first = arr[0];
+      let last = n - 1;
+      for (j = 0; j < n - 1; j++) {
+         arr[j] = arr[j + 1];
+      }
+      arr[last] = first;
+   }
+   return arr;
+}
+const rotateArr = [1, 2, 3, 4, 5];
+// console.log(leftRotateArrAY(rotateArr, 2), "array after rotation")
+
+// Easy problem 14:Leaders in an Array in JS
+function leaderArrays(arr) {
+   const n = arr.length;
+   let arraylEDDER = [arr[n - 1],];
+   let max = arr[n - 1];
+   for (j = n - 2; j >= 0; j--) {
+      if (arr[j] > max) {
+         max = arr[j];
+         arraylEDDER.push(arr[j]);
+      }
+   }
+   return arraylEDDER;
+}
+const arrayForLeader = [16, 17, 4, 3, 5, 2];
+// console.log('Leeder', leaderArrays(arrayForLeader));
+
+// Easy problem 15:Frequencies in a Sorted array in JS
+// Input:
+// array = [3, 3, 1, 1, 1, 8, 3, 6, 8, 8] 
+// Output:
+// [6, 1, 1, 1, 3, 3, 3, 8, 8, 8]
+// Explanation:
+// Number 6 occurs 1 time
+// Number 1 occurs 3 times
+// Number 3 occurs 3 times
+// Number 8 occurs 3 times
+function sortOnFreq(arr) {
+   const freqMap = new Map();
+   arr.forEach((num) => {
+      freqMap.set(num, (freqMap.get(num) || 0) + 1);
+   });
+   return arr.sort((a, b) => {
+      if (freqMap.get(a) !== freqMap.get(b)) {
+         return freqMap.get(a)- freqMap.get(b);
+      } else {
+         return a-b;
+      }
+   })
+}
+// const inputForFre = [3, 3, 1, 1, 1,1, 8, 3, 6, 8, 8, 9];
+// console.log(sortOnFreq(inputForFre), "Sort based upon the frequency!");
+
+// Medium Problems 16: Sort an array of 1 to n
+// Medium Problems 17: Reorder according to given indexes
+// Medium Problems 18: Minimum Swaps to Sort
+// Medium Problems 19: Sort an array of 0s, 1s and 2s
+// Medium Problems 20: Merge with O(1) extra space
+// Medium Problems 21: Majority Element
