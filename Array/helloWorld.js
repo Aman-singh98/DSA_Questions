@@ -383,9 +383,9 @@ function sortOnFreq(arr) {
    });
    return arr.sort((a, b) => {
       if (freqMap.get(a) !== freqMap.get(b)) {
-         return freqMap.get(a)- freqMap.get(b);
+         return freqMap.get(a) - freqMap.get(b);
       } else {
-         return a-b;
+         return a - b;
       }
    })
 }
@@ -393,6 +393,26 @@ function sortOnFreq(arr) {
 // console.log(sortOnFreq(inputForFre), "Sort based upon the frequency!");
 
 // Medium Problems 16: Sort an array of 1 to n
+function sortAnArray(arr) {
+   const a = [...arr];
+   const n = a?.length;
+   for (i = 0; i < n - 1; i++) {
+      let minIndex = i;
+      for (j = i + 1; j < n; j++) {
+         if (a[j] < a[minIndex]) {
+            minIndex = j;
+         }
+      }
+      if (i !== minIndex) {
+         [a[i], a[minIndex]] = [a[minIndex], a[i]];
+      }
+   }
+   return a;
+}
+
+// const sortThisArray = [5, 2, 8, 1];
+// console.log(sortAnArray(sortThisArray));
+
 // Medium Problems 17: Reorder according to given indexes
 // Medium Problems 18: Minimum Swaps to Sort
 // Medium Problems 19: Sort an array of 0s, 1s and 2s
