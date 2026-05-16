@@ -413,6 +413,56 @@ function sortAnArray(arr) {
 // const sortThisArray = [5, 2, 8, 1];
 // console.log(sortAnArray(sortThisArray));
 
+// Linear search
+function linearSearch(arr, element) {
+   for (i = 0; i < arr.length - 1; i++) {
+      if (arr[i] === element) {
+         return i + 1;
+      }
+   }
+   return -1;
+}
+
+// const linearSearchArr1 = [10, 25, 7, 43, 19];
+// console.log(linearSearch(linearSearchArr1, 43), "linearSearchArr");
+
+// Bubble sort
+function bubbleSortAlg(arr) {
+   const a = [...arr];
+   const n = arr.length;
+   let temp;
+
+   for (i = 0; i < n; i++) {
+      for (j = 0; j < n - i - 1; j++) {
+         if (a[j] > a[j + 1]) {
+            temp = a[j];
+            a[j] = a[j + 1];
+            a[j + 1] = temp;
+         }
+      }
+   }
+   return [arr, a];
+}
+
+const arrShortWithBubble = [5, 2, 8, 1];
+console.log(bubbleSortAlg(arrShortWithBubble), "Selection Sort this arr");
+
+// Selection sort
+// function selectionSortAlgo(arr) {
+//    return arr;
+// }
+
+// const sortThisArr = [5, 2, 8, 1];
+// console.log(selectionSortAlgo(arr), "Selection Sort tis arr");
+
+// Insertion sort
+// function insertionSortAlgo(arr) {
+//    return arr;
+// }
+
+// const sortThisArray = [5, 2, 8, 1];
+// console.log(insertionSortAlgo(sortThisArray), "insertionSortAlgo(arr)")
+
 // Medium Problems 17: Reorder according to given indexes
 // Medium Problems 18: Minimum Swaps to Sort
 // Medium Problems 19: Sort an array of 0s, 1s and 2s
