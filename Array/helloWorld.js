@@ -444,16 +444,30 @@ function bubbleSortAlg(arr) {
    return [arr, a];
 }
 
-const arrShortWithBubble = [5, 2, 8, 1];
-console.log(bubbleSortAlg(arrShortWithBubble), "Selection Sort this arr");
+// const arrShortWithBubble = [5, 2, 8, 1];
+// console.log(bubbleSortAlg(arrShortWithBubble), "Selection Sort this arr");
 
 // Selection sort
-// function selectionSortAlgo(arr) {
-//    return arr;
-// }
+function selectionSortAlgo(arr) {
+   const a = [...arr];
+   const n = arr?.length;
+   for (i = 0; i < n; i++) {
+      let min = i;
+      for (j = i + 1; j < n; j++) {
+         if (a[j] < a[min]) {
+            min = j;
+         }
+      }
+      if (i !== min) {
+         [a[i], a[min]] = [a[min], a[i]]
+      }
+   }
 
-// const sortThisArr = [5, 2, 8, 1];
-// console.log(selectionSortAlgo(arr), "Selection Sort tis arr");
+   return arr;
+}
+
+const sortThisArr = [5, 2, 8, 1];
+console.log(selectionSortAlgo(sortThisArr), "Selection Sort tis arr::");
 
 // Insertion sort
 // function insertionSortAlgo(arr) {
