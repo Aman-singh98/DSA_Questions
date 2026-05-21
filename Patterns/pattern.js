@@ -3,7 +3,7 @@ console.log("Start pattern questions!");
 // function pattern_1(n) {
 //    console.log(n, 'Number');
 // }
-// console.log(pattern_1(n), "Pattern");
+// console.log(pattern_1(5), "Pattern");
 
 // 1. Square & Hollow Square Patterns
 // 1.1 Print a solid square pattern of size N.
@@ -83,7 +83,7 @@ function pattern_4(n) {
       console.log(row);
    }
 }
-console.log(pattern_4(5), "Pattern 5");
+// console.log(pattern_4(5), "Pattern 5");
 
 // 2. Right Triangle & Inverted Triangle
 
@@ -93,6 +93,16 @@ console.log(pattern_4(5), "Pattern 5");
 // ***
 // ****
 // *****
+function pattern_5(n) {
+   for (let i = 1; i <= n; i++) {
+      let row = " ";
+      for (let j = 1; j <= i; j++) {
+         row += "*";
+      }
+      console.log(row);
+   }
+}
+// console.log(pattern_5(5), "Pattern");
 
 // 2.2 Print an inverted right triangle.
 // *****
@@ -100,6 +110,16 @@ console.log(pattern_4(5), "Pattern 5");
 // ***
 // **
 // *
+function pattern_6(n) {
+   for (let i = 1; i <= n; i++) {
+      let row = "";
+      for (let j = n; j >= i; j--) {
+         row += "+";
+      }
+      console.log(row);
+   }
+}
+// console.log(pattern_6(5), "Pattern 6");
 
 // 2.3 Print a number increasing triangle.
 // 1
@@ -108,11 +128,33 @@ console.log(pattern_4(5), "Pattern 5");
 // 1234
 // 12345
 
+function pattern_7(n) {
+   for (let i = 1; i <= n; i++) {
+      let row = " ";
+      for (let j = 1; j <= i; j++) {
+         row += j;
+      }
+      console.log(row);
+   }
+}
+// console.log(pattern_7(5), "Pattern 7");
+
 // 2.4 Print an inverted number triangle.
 // 12345
 // 1234
 // 123
 // 12
 // 1
+
+function pattern_8(n) {
+   for (let i = 1; i <= n; i++) {
+      let row = "";
+      for (let j = n; j >= i; j--) {
+         row += j + " ";
+      }
+      console.log(row);
+   }
+}
+// console.log(pattern_8(5), "Pattern");
 
 // 3. Full Pyramid & Inverted Pyramid
