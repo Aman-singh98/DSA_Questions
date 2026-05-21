@@ -249,7 +249,7 @@ function pattern12(n) {
       console.log(row);
    }
 }
-console.log(pattern12(5), "Pattern 12");
+// console.log(pattern12(5), "Pattern 12");
 
 
 // function pattern_1(n) {
