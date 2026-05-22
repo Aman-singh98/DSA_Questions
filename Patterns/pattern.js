@@ -382,7 +382,7 @@ function pattern_17(n) {
       console.log(row);
    }
 }
-console.log(pattern_17(4), "Pattern 17");
+// console.log(pattern_17(4), "Pattern 17");
 
 // 5.2. Print a hollow butterfly pattern.
 // 5.3. Print an hourglass star pattern.
@@ -397,12 +397,68 @@ console.log(pattern_17(4), "Pattern 17");
 // 7 8 9 10
 // 11 12 13 14 15
 
+function patternFloyd(n) {
+   console.log(n, "patternFloyd");
+   for (let i = 1; i <= n; i++) {
+      let row = "";
+      for (let j = 1; j <= i; j++) {
+         row += j + (i - 1) + " ";
+      }
+      console.log(row);
+   }
+}
+console.log(patternFloyd(5), "patternFloyd");
+
 // 6.2 Print Pascal’s Triangle.
+//         1
+//       1   1
+//     1   2   1
+//   1   3   3   1
+// 1   4   6   4   1
+function pascalTriangle(n) {
+   for (let i = 0; i < n; i++) {
+      let row = "";
+      // Spaces
+      for (let space = 0; space < n - i - 1; space++) {
+         row += "  ";
+      }
+
+      let number = 1;
+      // Pascal Values
+      for (let j = 0; j <= i; j++) {
+         row += number + "   ";
+         number = number * (i - j) / (j + 1);
+      }
+      console.log(row);
+   }
+}
+
+// console.log(pascalTriangle(5));
+
 // 6.3 Print a triangle with continuous odd numbers only.
+// 1
+// 3 5
+// 7 9 11
+// 13 15 17 19
+// 21 23 25 27 29
 // 6.4 Print a triangle where each row contains squares of numbers.
 // 1
 // 4 9
 // 16 25 36
+function squareNumberTriangle(n) {
+   let num = 1;
+   for (let i = 1; i <= n; i++) {
+      let row = "";
+      for (let j = 1; j <= i; j++) {
+
+         row += (num * num) + " ";
+
+         num++;
+      }
+      console.log(row);
+   }
+}
+// console.log(squareNumberTriangle(4));
 
 // 7. Hollow Diamond & Spiral Patterns
 // 7.1 Print a hollow diamond star pattern.
