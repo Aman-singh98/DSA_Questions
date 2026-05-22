@@ -229,7 +229,6 @@ function pattern_11(n) {
 //   ABCBA
 //  ABCDCBA
 // ABCDEDCBA
-
 function pattern12(n) {
    for (let i = 1; i <= n; i++) {
       let row = "";
@@ -251,7 +250,6 @@ function pattern12(n) {
 }
 // console.log(pattern12(5), "Pattern 12");
 
-
 // function pattern_1(n) {
 //    console.log(n, 'Number');
 // }
@@ -262,3 +260,33 @@ function pattern12(n) {
 // 4.2 Print a hollow diamond pattern.
 // 4.3 Print a number diamond pattern.
 // 4.4 Print a mirrored diamond pattern using alphabets.
+
+// 5. Butterfly & Hourglass Patterns
+// 5.1. Print a butterfly star pattern.
+// 5.2. Print a hollow butterfly pattern.
+// 5.3. Print an hourglass star pattern.
+// 5.4. Print a number hourglass pattern.
+
+// 6. Number Triangle (Floyd's / Pascal's)
+// 6.1 Print Floyd’s Triangle.
+// 1
+// 2 3
+// 4 5 6
+// 7 8 9 10
+// 11 12 13 14 15
+
+// 6.2 Print Pascal’s Triangle.
+// 6.3 Print a triangle with continuous odd numbers only.
+// 6.4 Print a triangle where each row contains squares of numbers.
+// 1
+// 4 9
+// 16 25 36
+
+// 7. Hollow Diamond & Spiral Patterns
+// 7.1 Print a hollow diamond star pattern.
+// 7.2 Print a square spiral pattern using *.
+// 7.3 Print a numeric spiral matrix.
+// 1  2  3  4
+// 12 13 14 5
+// 11 16 15 6
+// 10 9  8  7
