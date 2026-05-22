@@ -14,7 +14,7 @@ function pattern_1(n) {
       for (let j = 1; j < n; j++) {
          row = row + "*";
       }
-      console.log(row);
+      // console.log(row);
    }
 }
 // console.log(pattern_1(5), "Pattern");
@@ -250,22 +250,144 @@ function pattern12(n) {
 }
 // console.log(pattern12(5), "Pattern 12");
 
-// function pattern_1(n) {
-//    console.log(n, 'Number');
-// }
-// console.log(pattern_1(5), "Pattern");
-
 // 4. Diamond Pattern
 // 4.1 Print a full diamond star pattern.
+function pattern_13(n) {
+   for (let i = 1; i <= n; i++) {
+      let row = " ";
+      for (let j = 1; j <= (n - i); j++) {
+         row += " "
+      }
+      for (let k = 1; k <= (2 * i - 1); k++) {
+         row += "*";
+      }
+      console.log(row);
+   }
+   for (let i = 1; i <= n; i++) {
+      let row = " ";
+      for (let x = 1; x <= (i - 1); x++) {
+         row += " ";
+      }
+      for (let y = 1; y <= 2 * (n - i) + 1; y++) {
+         row += "*";
+      }
+      console.log(row);
+   }
+}
+// console.log(pattern_13(5), "Pattern 13");
+
 // 4.2 Print a hollow diamond pattern.
+function pattern_14(n) {
+   for (let i = 1; i <= n; i++) {
+      let row = "";
+      for (let j = 1; j <= n - i; j++) {
+         row += " ";
+      }
+      for (let k = 1; k <= (2 * i - 1); k++) {
+         if (k === 1 || k === (2 * i - 1)) {
+            row += "*";
+         } else {
+            row += " ";
+         }
+      }
+      console.log(row);
+   }
+   for (let i = 2; i <= n; i++) {
+      let row = " ";
+      for (let j = 1; j < i - 1; j++) {
+         row += " ";
+      }
+      for (let z = 1; z <= (2 * (n - i) + 1); z++) {
+         if (z === 1 || z === (2 * (n - i) + 1)) {
+            row += "*";
+         }
+         else {
+            row += " ";
+         }
+      }
+      console.log(row);
+   }
+}
+// console.log(pattern_14(5), "Pattern 14");
+
 // 4.3 Print a number diamond pattern.
+function pattern_15(n) {
+   // console.log(n, 'Number');
+   for (let i = 1; i < n; i++) {
+      let row = "";
+      for (let j = 1; j < (n - i); j++) {
+         row += " ";
+      }
+      for (let k = 1; k <= (2 * i - i); k++) {
+         row += k;
+      }
+      for (let k = i - 1; k >= 1; k--) {
+         row += k;
+      }
+      console.log(row);
+   }
+}
+// console.log(pattern_15(5), "Pattern 15");
+
 // 4.4 Print a mirrored diamond pattern using alphabets.
 
 // 5. Butterfly & Hourglass Patterns
 // 5.1. Print a butterfly star pattern.
+
+function pattern_17(n) {
+
+   // Upper Half
+   for (let i = 1; i <= n; i++) {
+
+      let row = "";
+
+      // Left Stars
+      for (let j = 1; j <= i; j++) {
+         row += "*";
+      }
+
+      // Middle Spaces
+      for (let k = 1; k <= 2 * (n - i); k++) {
+         row += " ";
+      }
+
+      // Right Stars
+      for (let l = 1; l <= i; l++) {
+         row += "*";
+      }
+
+      console.log(row);
+   }
+
+   // Lower Half
+   for (let i = n; i >= 1; i--) {
+
+      let row = "";
+
+      // Left Stars
+      for (let j = 1; j <= i; j++) {
+         row += "*";
+      }
+
+      // Middle Spaces
+      for (let k = 1; k <= 2 * (n - i); k++) {
+         row += " ";
+      }
+
+      // Right Stars
+      for (let l = 1; l <= i; l++) {
+         row += "*";
+      }
+
+      console.log(row);
+   }
+}
+console.log(pattern_17(4), "Pattern 17");
+
 // 5.2. Print a hollow butterfly pattern.
 // 5.3. Print an hourglass star pattern.
 // 5.4. Print a number hourglass pattern.
+
 
 // 6. Number Triangle (Floyd's / Pascal's)
 // 6.1 Print Floyd’s Triangle.
