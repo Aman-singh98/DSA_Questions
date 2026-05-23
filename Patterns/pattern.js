@@ -81,7 +81,6 @@ function pattern_4(n) {
 // console.log(pattern_4(5), "Pattern 5");
 
 // 2. Right Triangle & Inverted Triangle
-
 // 2.1 Print a right-angled star triangle.
 // *
 // **
@@ -153,7 +152,6 @@ function pattern_8(n) {
 // console.log(pattern_8(5), "Pattern");
 
 // 3. Full Pyramid & Inverted Pyramid
-
 // 3.1 Print a full star pyramid.
 //     *
 //    ***
@@ -388,7 +386,6 @@ function pattern_17(n) {
 // 5.3. Print an hourglass star pattern.
 // 5.4. Print a number hourglass pattern.
 
-
 // 6. Number Triangle (Floyd's / Pascal's)
 // 6.1 Print Floyd’s Triangle.
 // 1
@@ -432,7 +429,6 @@ function pascalTriangle(n) {
       console.log(row);
    }
 }
-
 // console.log(pascalTriangle(5));
 
 // 6.3 Print a triangle with continuous odd numbers only.
