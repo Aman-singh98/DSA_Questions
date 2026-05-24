@@ -457,6 +457,7 @@ function squareNumberTriangle(n) {
 // console.log(squareNumberTriangle(4));
 
 // 7. Hollow Diamond & Spiral Patterns
+
 // 7.1 Print a hollow diamond star pattern.
 // 7.2 Print a square spiral pattern using *.
 // 7.3 Print a numeric spiral matrix.
