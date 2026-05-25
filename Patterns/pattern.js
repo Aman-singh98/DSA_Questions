@@ -482,7 +482,7 @@ function patternOne(n) {
    return n;
 }
 
-console.log(patternOne(5), "patternOne(n)");
+// console.log(patternOne(5), "patternOne(n)");
 // 7.2 Print a square spiral pattern using *.
 // *****
 //     *
@@ -491,11 +491,77 @@ console.log(patternOne(5), "patternOne(n)");
 // * ***
 // *    
 // *****
-function patternTwo(n) {
-   return n;
-}
+function squareSpiral(n) {
+   // Step 1:
+   // Create a 2D array filled with spaces
+   let arr = Array.from({ length: n }, () =>
+      Array(n).fill(" ")
+   );
 
-console.log(patternTwo(5), "patternTwo(n)");
+   // Step 2:
+   // Define boundaries
+   let top = 0;
+   let bottom = n - 1;
+   let left = 0;
+   let right = n - 1;
+
+   // Step 3:
+   // Continue until boundaries cross each other
+   while (top <= bottom && left <= right) {
+
+      // Step 4:
+      // Left → Right
+      for (let i = left; i <= right; i++) {
+         arr[top][i] = "*";
+      }
+
+      // Step 5:
+      // Move top boundary downward
+     top += 2;
+
+      // Step 6:
+      // Top → Bottom
+      for (let i = top; i <= bottom; i++) {
+         arr[i][right] = "*";
+      }
+
+      // Step 7:
+      // Move right boundary leftward
+     right -= 2;
+
+      // Step 8:
+      // Right → Left
+      if (top <= bottom) {
+         for (let i = right; i >= left; i--) {
+            arr[bottom][i] = "*";
+         }
+
+         // Step 9:
+         // Move bottom boundary upward
+         bottom -= 2;
+      }
+
+      // Step 10:
+      // Bottom → Top
+      if (left <= right) {
+         for (let i = bottom; i >= top; i--) {
+            arr[i][left] = "*";
+         }
+
+         // Step 11:
+         // Move left boundary rightward
+         left += 2;
+      }
+   }
+
+   // Step 12:
+   // Print the array row by row
+   for (let row of arr) {
+      console.log(row.join(""));
+   }
+}
+console.log(squareSpiral(5), "squareSpiral(n)");
+
 // 7.3 Print a numeric spiral matrix.
 // 1  2  3  4
 // 12 13 14 5
