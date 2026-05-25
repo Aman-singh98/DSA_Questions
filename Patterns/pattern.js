@@ -404,7 +404,7 @@ function patternFloyd(n) {
       console.log(row);
    }
 }
-console.log(patternFloyd(5), "patternFloyd");
+// console.log(patternFloyd(5), "patternFloyd");
 
 // 6.2 Print Pascal’s Triangle.
 //         1
@@ -459,9 +459,50 @@ function squareNumberTriangle(n) {
 // 7. Hollow Diamond & Spiral Patterns
 
 // 7.1 Print a hollow diamond star pattern.
+//     *
+//    * *
+//   *   *
+//  *     *
+// *       *
+//  *     *
+//   *   *
+//    * *
+//     *
+function patternOne(n) {
+   for (let i = 1; i <= n; i++) {
+      let row = "";
+      for (let j = 1; j <= (n - i); j++) {
+         row += " ";
+      }
+      for (let k = 1; k <= 2 * i - 1; k++) {
+         row += k === 1 || k === (2 * i - 1) ? "*" : " ";
+      }
+      console.log(row);
+   }
+   return n;
+}
+
+console.log(patternOne(5), "patternOne(n)");
 // 7.2 Print a square spiral pattern using *.
+// *****
+//     *
+// *** *
+// *   *
+// * ***
+// *    
+// *****
+function patternTwo(n) {
+   return n;
+}
+
+console.log(patternTwo(5), "patternTwo(n)");
 // 7.3 Print a numeric spiral matrix.
 // 1  2  3  4
 // 12 13 14 5
 // 11 16 15 6
 // 10 9  8  7
+function patternThree(n) {
+   return n;
+}
+
+console.log(patternThree(5), "patternThree(n)");
