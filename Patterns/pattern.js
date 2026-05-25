@@ -517,7 +517,7 @@ function squareSpiral(n) {
 
       // Step 5:
       // Move top boundary downward
-     top += 2;
+      top += 2;
 
       // Step 6:
       // Top → Bottom
@@ -527,7 +527,7 @@ function squareSpiral(n) {
 
       // Step 7:
       // Move right boundary leftward
-     right -= 2;
+      right -= 2;
 
       // Step 8:
       // Right → Left
@@ -560,15 +560,95 @@ function squareSpiral(n) {
       console.log(row.join(""));
    }
 }
-console.log(squareSpiral(5), "squareSpiral(n)");
+// console.log(squareSpiral(5), "squareSpiral(n)");
 
 // 7.3 Print a numeric spiral matrix.
 // 1  2  3  4
 // 12 13 14 5
 // 11 16 15 6
 // 10 9  8  7
-function patternThree(n) {
-   return n;
+function numericSpiral(n) {
+
+   // Step 1:
+   // Create empty n x n matrix
+   let matrix = Array.from({ length: n }, () =>
+      Array(n).fill(0)
+   );
+
+   // Step 2:
+   // Define boundaries
+   let top = 0;
+   let bottom = n - 1;
+   let left = 0;
+   let right = n - 1;
+
+   // Step 3:
+   // Starting number
+   let num = 1;
+
+   // Step 4:
+   // Continue until boundaries cross
+   while (top <= bottom && left <= right) {
+      // =========================
+      // LEFT → RIGHT
+      // =========================
+      for (let i = left; i <= right; i++) {
+         // Fill current number
+         matrix[top][i] = num;
+         // Increase number
+         num++;
+      }
+      // Move top boundary downward
+      top++;
+
+      // =========================
+      // TOP → BOTTOM
+      // =========================
+      for (let i = top; i <= bottom; i++) {
+         // Fill current number
+         matrix[i][right] = num;
+         // Increase number
+         num++;
+      }
+      // Move right boundary leftward
+      right--;
+
+      // =========================
+      // RIGHT → LEFT
+      // =========================
+      if (top <= bottom) {
+         for (let i = right; i >= left; i--) {
+            // Fill current number
+            matrix[bottom][i] = num;
+
+            // Increase number
+            num++;
+         }
+         // Move bottom upward
+         bottom--;
+      }
+
+      // =========================
+      // BOTTOM → TOP
+      // =========================
+      if (left <= right) {
+         for (let i = bottom; i >= top; i--) {
+            // Fill current number
+            matrix[i][left] = num;
+
+            // Increase number
+            num++;
+         }
+         // Move left boundary rightward
+         left++;
+      }
+   }
+
+   // Step 5:
+   // Print matrix row by row
+   for (let row of matrix) {
+      console.log(row.join(" "));
+   }
 }
 
-console.log(patternThree(5), "patternThree(n)");
+console.log(numericSpiral(5), "patternThree(n)");
