@@ -36,19 +36,19 @@ function countCharacters(str) {
    return result;
 }
 
-console.log(countCharacters("AABBCCCDDDE"), 'Check Bro..');
+// console.log(countCharacters("AABBCCCDDDE"), 'Check Bro..');
 
 // 5. Flatten an array
 const arr = [1, [2, [3, 4]], 5];
-console.log(arr.flat(Infinity));
+// console.log(arr.flat(Infinity));
 // 6. What is the output of typeof null?
 // Ans object
 // 7. What will a for loop with var inside setTimeout print?
-for (var i = 0; i < 5; i++) {
-   setTimeout(() => {
-      console.log(i);
-   }, 1000);
-}
+// for (var i = 0; i < 5; i++) {
+//    setTimeout(() => {
+//       console.log(i);
+//    }, 1000);
+// }
 // * Note: If we replace var with let than::: output 0,1,2,3,4,5
 
 // 8. What is the output of 1 + "2" + 3?
@@ -57,8 +57,28 @@ for (var i = 0; i < 5; i++) {
 // Ans:  [] + [] ==> ""  and  [] + {} = "[object, object]"
 
 const arrForFlat = [1, [2, [3, 4], 5], 6];
-console.log(arrForFlat.flat(Infinity), " Flat array output");
+// console.log(arrForFlat.flat(Infinity), " Flat array output");
 
 // 3. Implement reduce()
 
 // 4. Implement filter()
+const arrayOfNums = [1, 2, 3, 4, 5];
+const result = arrayOfNums.filter((num) => num % 2 === 0);
+console.log(result, "Even numbers");
+
+// Create filter custom method::
+
+// Array.prototype means every array use this method:
+Array.prototype.myFilter = function (callback) {
+   let result = [];
+   for (let i = 0; i < this.length; i++) {
+      if (callback(this[i])) {
+         result.push(this[i]);
+      }
+   }
+   return result;
+}
+
+const arr23 = [1, 2, 3, 4, 5];
+const output = arr23.myFilter((num) => num % 2 === 0);
+console.log(output);
