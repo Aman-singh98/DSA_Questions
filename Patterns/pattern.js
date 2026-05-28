@@ -651,4 +651,69 @@ function numericSpiral(n) {
    }
 }
 
-console.log(numericSpiral(5), "patternThree(n)");
+// console.log(numericSpiral(5), "patternThree(n)");
+
+// Reverse a number
+// Input: 1234
+// Output: 4321
+
+function revererNumber(num) {
+   let rev = 0;
+   while (num > 0) {
+      let digit = num % 10;
+      rev = rev * 10 + digit;
+      num = Math.floor(num / 10);
+   }
+   return rev;
+}
+// console.log(revererNumber(1234));
+
+// Palindrome number check
+// original number === reverse number
+function palindromeNum(num) {
+   const originalNumber = num;
+   let rev = 0;
+   while (num > 0) {
+      const digit = num % 10;
+      rev = rev * 10 + digit;
+      num = Math.floor(num / 10);
+   }
+   return originalNumber === rev ? true : false;
+}
+
+// console.log(palindromeNum(121), "FINAL Out put");
+
+// Armstrong Number
+function armstrongNum(num) {
+   const digitCount = num.toString()?.length;
+   const originalNum = num;
+   let sum = 0;
+   while (num > 0) {
+      let digit = num % 10;
+      sum = sum + digit ** digitCount;
+      num = Math.floor(num / 10);
+   }
+
+   return originalNum === sum;
+}
+// console.log(armstrongNum(153));
+
+function isPrime(num) {
+   if (num <= 1) {
+      return false;
+   }
+
+   for (let i = 2; i < num; i++) {
+      if (num % i === 0) {
+         return false;
+      }
+   }
+   return true;
+}
+// console.log(isPrime(4), "Number is prime")
+
+// Fibonacci Series
+function series(){
+   return true;
+}
+console.log(series());
