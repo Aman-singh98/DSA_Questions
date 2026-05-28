@@ -713,7 +713,66 @@ function isPrime(num) {
 // console.log(isPrime(4), "Number is prime")
 
 // Fibonacci Series
-function series(){
+function series(num) {
+   let first = 0;
+   let second = 1;
+   for (let i = 0; i < num; i++) {
+      console.log(first);
+      let next = first + second;
+      first = second;
+      second = next;
+   }
    return true;
 }
-console.log(series());
+// console.log(series(7));
+
+// Factorial
+function Factorial(num) {
+   let result = 1;
+   for (let i = 1; i <= num; i++) {
+      result = result * i;
+   }
+   return result;
+}
+// console.log(Factorial(5));
+
+
+// Power of A NUMBER
+function power(base, expo) {
+   let result = 1;
+   for (let i = 1; i <= expo; i++) {
+      result = result * base;
+   }
+   return result;
+}
+// console.log(power(5,3));
+
+function sumOfDigit(num) {
+   let sum = 0;
+   while (num > 0) {
+      let digit = num % 10;
+      sum = sum + digit;
+      num = Math.floor(num / 10);
+   }
+   return sum;
+}
+// console.log(sumOfDigit(1234));
+
+// Happy number
+function isHappyNumber(num) {
+   let seen = new Set();
+   while (num !== 1 && !seen.has(num)) {
+      seen.add(num);
+      let sum = 0;
+      while (num > 0) {
+         let digit = num % 10;
+         sum += digit * digit;
+         num = Math.floor(num / 10);
+      }
+      num = sum;
+   }
+   return num === 1;
+}
+
+console.log(isHappyNumber(19)); // true
+console.log(isHappyNumber(12)); // false
