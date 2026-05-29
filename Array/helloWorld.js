@@ -467,15 +467,7 @@ function selectionSortAlgo(arr) {
 }
 
 const sortThisArr = [5, 2, 8, 1];
-console.log(selectionSortAlgo(sortThisArr), "Selection Sort tis arr::");
-
-// Insertion sort
-// function insertionSortAlgo(arr) {
-//    return arr;
-// }
-
-// const sortThisArray = [5, 2, 8, 1];
-// console.log(insertionSortAlgo(sortThisArray), "insertionSortAlgo(arr)")
+// console.log(selectionSortAlgo(sortThisArr), "Selection Sort tis arr::");
 
 // Medium Problems 17: Reorder according to given indexes
 // Medium Problems 18: Minimum Swaps to Sort
@@ -499,14 +491,40 @@ console.log(selectionSortAlgo(sortThisArr), "Selection Sort tis arr::");
 // ```text
 // Maximum = 9
 // Minimum = 1
-```
+// ```
+function findMinAndMax(arr) {
+   const n = arr?.length;
+   const sortedArray = arr?.sort((a, b) => a - b);
+   const output_first = {
+      min: sortedArray[0],
+      max: sortedArray[n - 1]
+   }
+   return output_first;
+}
+function findMaxAndMin(arr) {
+   const n = arr?.length;
+   let min = arr[0];
+   let max = arr[0];
+   for (let i = 1; i < n; i++) {
+      const targetArray = arr[i];
+      if (targetArray > max) {
+         max = targetArray;
+      }
+      if (targetArray < min) {
+         min = targetArray;
+      }
+   }
+   return { min, max };
+}
+// console.log(findMinAndMax([4, 2, 9, 1, 7]), "Find Min. And Max.");
+// console.log(findMaxAndMin([4, 2, 9, 1, 7]), "Find Max And Min.");
 
 // ## 2. Sum & Average of Array
 // **Problem:**
 // Find the sum and average of all elements in the array.
 // ### Example
 // Input:
-// ```text
+// ```
 // arr = [2, 4, 6, 8]
 // ```
 // Output:
@@ -514,6 +532,17 @@ console.log(selectionSortAlgo(sortThisArr), "Selection Sort tis arr::");
 // Sum = 20
 // Average = 5
 // ```
+function sumAndAverage(arr) {
+   const n = arr?.length;
+   let sum = arr[0];
+   for (let i = 1; i < n; i++) {
+      sum += arr[i];
+   }
+   console.log(sum, "total sum");
+   const average = Math.floor(sum / n);
+   return { Sum: sum, Average: average };
+}
+// console.log(sumAndAverage([2, 4, 6, 8]), "QUESTION 2");
 
 // ## 3. Reverse Array In-Place
 // **Problem:**
@@ -527,6 +556,32 @@ console.log(selectionSortAlgo(sortThisArr), "Selection Sort tis arr::");
 // ```text
 // Reversed Array = [5, 4, 3, 2, 1]
 // ```
+function reverseFirst(arr) {
+   return arr?.reverse();
+}
+function reverseSecond(arr) {
+   let n = arr?.length;
+   let reverseArr = [];
+   for (let i = n - 1; i >= 0; i--) {
+      reverseArr.push(arr[i]);
+   }
+   return reverseArr;
+}
+/** *Note: Two POINTER */
+function reverseThird(arr) {
+   let n = arr.length;
+   let left = 0;
+   let right = n - 1;
+   while (left < right) {
+      [arr[left], arr[right]] = [arr[right], arr[left]]
+      left++;
+      right--;
+   }
+   return arr;
+}
+// console.log(reverseFirst([1, 2, 3, 4, 5]), "1 1 1 1");
+// console.log(reverseSecond([1, 2, 3, 4, 5]), "2 2 2 2");
+// console.log(reverseThird([1, 2, 3, 4, 5]), "3 3 3 3");
 
 // ## 4. Second Largest / Second Smallest
 // **Problem:**
@@ -541,7 +596,39 @@ console.log(selectionSortAlgo(sortThisArr), "Selection Sort tis arr::");
 // Second Largest = 8
 // Second Smallest = 3
 // ```
+function secondLargest(arr) {
+   const n = arr?.length;
+   let largest = -Infinity;
+   let secondLargest = -Infinity;
+   for (let i = 0; i < n; i++) {
+      const targetElement = arr[i];
+      if (targetElement > largest) {
+         secondLargest = largest;
+         largest = targetElement;
+      } else if (targetElement > secondLargest && targetElement !== largest) {
+         secondLargest = targetElement;
+      }
+   }
+   return secondLargest;
 
+}
+console.log(secondLargest([10, 8, 3, 5, 1, 9]));
+function secondSmallest(arr) {
+   const n = arr.length;
+   let smallest = Infinity;
+   let _2smallest = Infinity;
+   for (let i = 0; i <= n; i++) {
+      let current = arr[i];
+      if (current < smallest) {
+         _2smallest = smallest;
+         smallest = current;
+      } else if (current < _2smallest && current !== smallest) {
+         _2smallest = current;
+      }
+   }
+   return _2smallest;
+}
+console.log(secondSmallest([10, 8, 3, 5, 1, 9, 0]));
 
 // ## 5. Count Frequency of Each Element
 // **Problem:**
