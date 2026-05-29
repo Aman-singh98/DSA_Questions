@@ -766,7 +766,7 @@ function isArrSorted(arr = [1, 2, 3, 4, 5, 9]) {
    }
    return true;
 }
-console.log(isArrSorted())
+// console.log(isArrSorted())
 
 // ## 10. Left Rotate Array by 1
 // **Problem:**
@@ -780,6 +780,18 @@ console.log(isArrSorted())
 // ```text
 // [2, 3, 4, 5, 1]
 // ```
+function rotateArray1(arr, k) {
+   let n = arr?.length;
+   for (let d = 0; d < k; d++) {
+      let lastElem = arr[n - 1];
+      for (let i = n - 1; i > 0; i--) {
+         arr[i] = arr[i - 1];
+      }
+      arr[0] = lastElem;
+   }
+   return arr;
+}
+// console.log(rotateArray1([1, 2, 3, 4, 5], 1));
 
 // ## 11. Union & Intersection of Two Arrays
 // **Problem:**
@@ -809,6 +821,15 @@ console.log(isArrSorted())
 // ```text
 // Missing Number = 3
 // ```
+function findMissingNumber(arr = [1, 2, 4, 5], n = 5) {
+   let totalSum = n * (n + 1) / 2;
+   let summOFArray = 0;
+   for (let i = 0; i < arr.length; i++) {
+      summOFArray += arr[i];
+   }
+   return totalSum - summOFArray;
+}
+// console.log(findMissingNumber());
 
 // ## 13. Find the Duplicate in Array
 // **Problem:**
@@ -822,6 +843,18 @@ console.log(isArrSorted())
 // ```text
 // Duplicate Element = 2
 // ```
+function duplicateArrayof(arr) {
+   let visited = {};
+   for (let i = 0; i < arr.length; i++) {
+      if (visited[arr[i]]) {
+         return arr[i];
+      }
+      visited[arr[i]] = true;
+   }
+   console.log(visited, "visited");
+   return "No duplicate"
+}
+// console.log(duplicateArrayof([1, 3, 4, 2, 2]));
 
 // ## 14. Longest Subarray with Sum K (Brute Force)
 // **Problem:**
@@ -840,3 +873,13 @@ console.log(isArrSorted())
 // ```text
 // Subarray = [3,1,1,1]
 // ```
+function subArrayGen(arr = [1, 2, 3]) {
+   for (let i = 0; i < arr.length; i++) {
+      let subarray = "";
+      for (let j = i; j < arr.length; j++) {
+         subarray += arr[j] + " ";
+         console.log(subarray);
+      }
+   }
+}
+console.log(subArrayGen(), "Generate sub array");
