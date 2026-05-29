@@ -697,9 +697,17 @@ function zeroAtLastPlace(arr = [0, 1, 0, 3, 12]) {
 // Unique Array = [1, 2, 3, 4]
 // ```
 function removeDuplicate(arr = [1, 1, 2, 2, 3, 4, 4]) {
-   return arr;
+   let n = arr?.length;
+   let pointer = 1;
+   for (let i = 1; i < n; i++) {
+      if (arr[i] !== arr[i - 1]) {
+         arr[pointer] = arr[i];
+         pointer++;
+      }
+   }
+   return arr.slice(0, pointer);
 }
-console.log(removeDuplicate());
+// console.log(removeDuplicate());
 
 // ## 8. Rotate Array Left/Right by K Steps
 // **Problem:**
@@ -723,6 +731,19 @@ console.log(removeDuplicate());
 // ```text
 // [4, 5, 1, 2, 3]
 // ```
+function leftRotate(arr = [1, 2, 3, 4, 5], k = 2) {
+   const n = arr?.length;
+   for (d = 0; d < k; d++) {
+      let lastElement = arr[n - 1];
+      for (let i = n; i > 0; i--) {
+         arr[i] = arr[i - 1];
+      }
+      arr[0] = lastElement;
+   }
+   return arr;
+}
+
+console.log(leftRotate(), "Haaa");
 
 // ## 9. Check if Array is Sorted
 // **Problem:**
