@@ -482,3 +482,215 @@ console.log(selectionSortAlgo(sortThisArr), "Selection Sort tis arr::");
 // Medium Problems 19: Sort an array of 0s, 1s and 2s
 // Medium Problems 20: Merge with O(1) extra space
 // Medium Problems 21: Majority Element
+
+/** Phase 2A — Arrays: Traversal Basics */
+
+// # Array Practice Questions with Example Output
+
+// ## 1. Find Maximum & Minimum in Array
+// **Problem:**
+// Given an array of integers, find the maximum and minimum element.
+// ### Example
+// Input
+// ```text
+// arr = [4, 2, 9, 1, 7]
+// ```
+// Output:
+// ```text
+// Maximum = 9
+// Minimum = 1
+```
+
+// ## 2. Sum & Average of Array
+// **Problem:**
+// Find the sum and average of all elements in the array.
+// ### Example
+// Input:
+// ```text
+// arr = [2, 4, 6, 8]
+// ```
+// Output:
+// ```text
+// Sum = 20
+// Average = 5
+// ```
+
+// ## 3. Reverse Array In-Place
+// **Problem:**
+// Reverse the given array without using extra space.
+// ### Example
+// Input:
+// ```text
+// arr = [1, 2, 3, 4, 5]
+// ```
+// Output:
+// ```text
+// Reversed Array = [5, 4, 3, 2, 1]
+// ```
+
+// ## 4. Second Largest / Second Smallest
+// **Problem:**
+// Find the second largest and second smallest element in the array.
+// ### Example
+// Input:
+// ```text
+// arr = [8, 3, 5, 1, 9]
+// ```
+// Output:
+// ```text
+// Second Largest = 8
+// Second Smallest = 3
+// ```
+
+
+// ## 5. Count Frequency of Each Element
+// **Problem:**
+// Count how many times each element appears in the array.
+// ### Example
+// Input:
+// ```text
+// arr = [1, 2, 2, 3, 1, 4]
+// ```
+// Output:
+// ```text
+// 1 -> 2 times
+// 2 -> 2 times
+// 3 -> 1 time
+// 4 -> 1 time
+// ```
+
+// ## 6. Move All Zeros to End (In-Place)
+// **Problem:**
+// Move all zeros to the end while maintaining the order of non-zero elements.
+// ### Example
+// Input:
+// ```text
+// arr = [0, 1, 0, 3, 12]
+// ```
+// Output:
+// ```text
+// [1, 3, 12, 0, 0]
+// ```
+
+
+// ## 7. Remove Duplicates from Sorted Array
+// **Problem:**
+// Remove duplicates from a sorted array and return unique elements.
+// ### Example
+// Input:
+// ```text
+// arr = [1, 1, 2, 2, 3, 4, 4]
+// ```
+// Output:
+// ```text
+// Unique Array = [1, 2, 3, 4]
+// ```
+
+// ## 8. Rotate Array Left/Right by K Steps
+// **Problem:**
+// Rotate the array by K positions.
+// ### Example (Left Rotation)
+// Input:
+// ```text
+// arr = [1, 2, 3, 4, 5]
+// k = 2
+// Output:
+// ```text
+// [3, 4, 5, 1, 2]
+// ```
+// ### Example (Right Rotation)
+// Input:
+// ```text
+// arr = [1, 2, 3, 4, 5]
+// k = 2
+// ```
+// Output:
+// ```text
+// [4, 5, 1, 2, 3]
+// ```
+
+// ## 9. Check if Array is Sorted
+// **Problem:**
+// Check whether the array is sorted in ascending order.
+// ### Example
+// Input:
+// ```text
+// arr = [1, 2, 3, 4, 5]
+// ```
+// Output:
+// ```text
+// Array is Sorted
+// ```
+
+// ## 10. Left Rotate Array by 1
+// **Problem:**
+// Rotate the array left by one position.
+// ### Example
+// Input:
+// ```text
+// arr = [1, 2, 3, 4, 5]
+// ```
+// Output:
+// ```text
+// [2, 3, 4, 5, 1]
+// ```
+
+// ## 11. Union & Intersection of Two Arrays
+// **Problem:**
+// Find the union and intersection of two arrays.
+// ### Example
+// Input:
+// ```text
+// arr1 = [1, 2, 3, 4]
+// arr2 = [3, 4, 5, 6]
+// ```
+// Output:
+// ```text
+// Union = [1, 2, 3, 4, 5, 6]
+// Intersection = [3, 4]
+// ```
+
+// ## 12. Find Missing Number (1 to N)
+// **Problem:**
+// Find the missing number from an array containing numbers from 1 to N.
+// ### Example
+// Input:
+// ```text
+// arr = [1, 2, 4, 5]
+// N = 5
+// ```
+// Output:
+// ```text
+// Missing Number = 3
+// ```
+
+// ## 13. Find the Duplicate in Array
+// **Problem:**
+// Find the duplicate element in the array.
+// ### Example
+// Input:
+// ```text
+// arr = [1, 3, 4, 2, 2]
+// ```
+// Output:
+// ```text
+// Duplicate Element = 2
+// ```
+
+// ## 14. Longest Subarray with Sum K (Brute Force)
+// **Problem:**
+// Find the length of the longest subarray having sum equal to K.
+// ### Example
+// Input:
+// ```text
+// arr = [1, 2, 3, 1, 1, 1, 1]
+// K = 6
+// ```
+// Output:
+// ```text
+// Longest Length = 4
+// ```
+// Explanation:
+// ```text
+// Subarray = [3,1,1,1]
+// ```
