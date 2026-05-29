@@ -675,8 +675,8 @@ function zeroAtLastPlace(arr = [0, 1, 0, 3, 12]) {
    let pointer = 0;
    const n = arr?.length;
    for (let i = 0; i < n; i++) {
-      if(arr[i] !== 0){
-         [arr[i], arr[pointer]]=[arr[pointer], arr[i]];
+      if (arr[i] !== 0) {
+         [arr[i], arr[pointer]] = [arr[pointer], arr[i]];
          pointer++;
       }
    }
@@ -696,6 +696,10 @@ function zeroAtLastPlace(arr = [0, 1, 0, 3, 12]) {
 // ```text
 // Unique Array = [1, 2, 3, 4]
 // ```
+function removeDuplicate(arr = [1, 1, 2, 2, 3, 4, 4]) {
+   return arr;
+}
+console.log(removeDuplicate());
 
 // ## 8. Rotate Array Left/Right by K Steps
 // **Problem:**
