@@ -743,7 +743,7 @@ function leftRotate(arr = [1, 2, 3, 4, 5], k = 2) {
    return arr;
 }
 
-console.log(leftRotate(), "Haaa");
+// console.log(leftRotate(), "Haaa");
 
 // ## 9. Check if Array is Sorted
 // **Problem:**
@@ -757,6 +757,16 @@ console.log(leftRotate(), "Haaa");
 // ```text
 // Array is Sorted
 // ```
+function isArrSorted(arr = [1, 2, 3, 4, 5, 9]) {
+   const n = arr?.length;
+   for (let i = 1; i < n; i++) {
+      if (arr[i] < arr[i - 1]) {
+         return false
+      }
+   }
+   return true;
+}
+console.log(isArrSorted())
 
 // ## 10. Left Rotate Array by 1
 // **Problem:**
