@@ -612,7 +612,7 @@ function secondLargest(arr) {
    return secondLargest;
 
 }
-console.log(secondLargest([10, 8, 3, 5, 1, 9]));
+// console.log(secondLargest([10, 8, 3, 5, 1, 9]));
 function secondSmallest(arr) {
    const n = arr.length;
    let smallest = Infinity;
@@ -628,7 +628,7 @@ function secondSmallest(arr) {
    }
    return _2smallest;
 }
-console.log(secondSmallest([10, 8, 3, 5, 1, 9, 0]));
+// console.log(secondSmallest([10, 8, 3, 5, 1, 9, 0]));
 
 // ## 5. Count Frequency of Each Element
 // **Problem:**
@@ -645,6 +645,19 @@ console.log(secondSmallest([10, 8, 3, 5, 1, 9, 0]));
 // 3 -> 1 time
 // 4 -> 1 time
 // ```
+function countFrequency(arr) {
+   const createMap = new Map();
+   arr.forEach((ele) =>
+      createMap.set(ele, (createMap.get(ele) || 0) + 1)
+   );
+   // for (const element of arr) {
+   //    console.log(element, "-->", createMap.get(element) || 0, "times");
+   // }
+   for (const [key, value] of createMap) {
+      console.log(key, "-->", value, "times");
+   }
+}
+// countFrequency([1, 2, 2, 3, 1, 4]);
 
 // ## 6. Move All Zeros to End (In-Place)
 // **Problem:**
@@ -658,7 +671,18 @@ console.log(secondSmallest([10, 8, 3, 5, 1, 9, 0]));
 // ```text
 // [1, 3, 12, 0, 0]
 // ```
-
+function zeroAtLastPlace(arr = [0, 1, 0, 3, 12]) {
+   let pointer = 0;
+   const n = arr?.length;
+   for (let i = 0; i < n; i++) {
+      if(arr[i] !== 0){
+         [arr[i], arr[pointer]]=[arr[pointer], arr[i]];
+         pointer++;
+      }
+   }
+   return arr;
+}
+// console.log(zeroAtLastPlace());
 
 // ## 7. Remove Duplicates from Sorted Array
 // **Problem:**
