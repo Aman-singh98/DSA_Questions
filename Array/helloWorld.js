@@ -882,4 +882,42 @@ function subArrayGen(arr = [1, 2, 3]) {
       }
    }
 }
-console.log(subArrayGen(), "Generate sub array");
+// console.log(subArrayGen(), "Generate sub array");
+
+// Phase 2B — Two Pointer Technique
+// 1. Pair Sum in Sorted Array (Easy)
+// arr = [1, 2, 4, 6, 8]
+// target = 10
+// Output: (2, 8) or indices of these elements
+
+// 2. Remove Duplicates from Sorted Array
+// Input:  [1,1,2,2,3,4,4]
+// Output: [1,2,3,4]
+// Length = 4
+
+// 3. Move Zeros to End
+// Input:  [0,1,0,3,12]
+// Output: [1,3,12,0,0]
+
+// 4. Sorted Squares of Sorted Array
+// Input:  [-4,-1,0,3,10]
+// Output: [0,1,9,16,100]
+
+// 5. Container With Most Water
+// height = [1,8,6,2,5,4,8,3,7]
+// Output: 49
+// Area = min(height[left], height[right])
+//        × (right - left)
+
+// 6. 3Sum – Find Triplets With Zero Sum
+// Input:  [-1,0,1,2,-1,-4]
+// Output:
+// [-1,-1,2]
+// [-1,0,1]
+
+// 7. Check Palindrome Using Two Pointers
+// 8. Merge Two Sorted Arrays
+// arr1 = [1,3,5]
+// arr2 = [2,4,6]
+// Output:
+// [1,2,3,4,5,6]
