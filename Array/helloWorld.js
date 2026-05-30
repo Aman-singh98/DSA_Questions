@@ -889,35 +889,121 @@ function subArrayGen(arr = [1, 2, 3]) {
 // arr = [1, 2, 4, 6, 8]
 // target = 10
 // Output: (2, 8) or indices of these elements
+function pairSum(arr = [1, 2, 4, 6, 8], target = 10) {
+   const n = arr?.length;
+   let left = 0;
+   let right = n - 1;
+
+   while (left < right) {
+      let sum = arr[left] + arr[right];
+      if (sum === target) {
+         return [arr[left], arr[right]];
+      }
+      if (sum > target) {
+         right--;
+      }
+      if (sum < target) {
+         left++;
+      }
+   }
+   return -1;
+}
+// console.log(pairSum(), 'Solution 0(n), space:0(1)');
 
 // 2. Remove Duplicates from Sorted Array
 // Input:  [1,1,2,2,3,4,4]
 // Output: [1,2,3,4]
 // Length = 4
+function arrayDuplicate(arr = [1, 1, 2, 2, 3, 4, 4], length = 4) {
+   const n = arr?.length;
+   let pointer = 0;
+   for (let i = 0; i < n; i++) {
+      if (arr[i] !== arr[i + 1]) {
+         arr[pointer] = arr[i];
+         pointer++;
+      }
+   }
+   return arr.slice(0, length);
+}
+// console.log(arrayDuplicate());
 
 // 3. Move Zeros to End
 // Input:  [0,1,0,3,12]
 // Output: [1,3,12,0,0]
+function zeroMoves(arr = [0, 1, 0, 3, 12]) {
+   const n = arr?.length;
+   let pointer = 0;
+   for (let i = 0; i < n; i++) {
+      if (arr[i] !== 0) {
+         [arr[pointer], arr[i]] = [arr[i], arr[pointer]];
+         pointer++;
+      }
+   }
+   return arr;
+}
+// console.log(zeroMoves(), 'zeroMoves');
 
 // 4. Sorted Squares of Sorted Array
 // Input:  [-4,-1,0,3,10]
 // Output: [0,1,9,16,100]
+function sortedSquare(arr = [-4, -1, 0, 3, 10]) {
+   let arrNew = [];
+   const n = arr?.length;
+   for (let i = 0; i < n; i++) {
+      let square = arr[i] * arr[i];
+      arrNew.push(square);
+   }
+   return { arr, sorted: arrNew.sort((a, b) => a - b) };
+}
+// console.log(sortedSquare());
 
 // 5. Container With Most Water
 // height = [1,8,6,2,5,4,8,3,7]
 // Output: 49
 // Area = min(height[left], height[right])
 //        × (right - left)
-
-// 6. 3Sum – Find Triplets With Zero Sum
-// Input:  [-1,0,1,2,-1,-4]
-// Output:
-// [-1,-1,2]
-// [-1,0,1]
+function volume(height = [1, 8, 6, 2, 5, 4, 8, 3, 7]) {
+   const n = height?.length;
+   let left = 0;
+   let right = n - 1;
+   let maxArea = 0;
+   while (left < right) {
+      const area = Math.min(height[right], height[left]) * (right - left);
+      maxArea = Math.max(maxArea, area);
+      if (height[left] < height[right]) {
+         left++;
+      } else {
+         right--;
+      }
+   }
+   return maxArea;
+}
+// console.log(volume());
 
 // 7. Check Palindrome Using Two Pointers
+function isPalindrome(str ="racecar"){
+   let n = str?.length;
+   let left =0;
+   let right = n-1;
+   while(left < right){
+      if(str[left] !== str[right] ){
+         return false;
+      }
+      left++;
+      right--;
+   }
+   return false;
+}
+console.log(isPalindrome());
+
 // 8. Merge Two Sorted Arrays
 // arr1 = [1,3,5]
 // arr2 = [2,4,6]
 // Output:
 // [1,2,3,4,5,6]
+
+// 6. 3 Sum – Find Triplets With Zero Sum
+// Input:  [-1,0,1,2,-1,-4]
+// Output:
+// [-1,-1,2]
+// [-1,0,1]
