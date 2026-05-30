@@ -981,12 +981,12 @@ function volume(height = [1, 8, 6, 2, 5, 4, 8, 3, 7]) {
 // console.log(volume());
 
 // 7. Check Palindrome Using Two Pointers
-function isPalindrome(str ="racecar"){
+function isPalindrome(str = "racecar") {
    let n = str?.length;
-   let left =0;
-   let right = n-1;
-   while(left < right){
-      if(str[left] !== str[right] ){
+   let left = 0;
+   let right = n - 1;
+   while (left < right) {
+      if (str[left] !== str[right]) {
          return false;
       }
       left++;
@@ -1001,6 +1001,31 @@ console.log(isPalindrome());
 // arr2 = [2,4,6]
 // Output:
 // [1,2,3,4,5,6]
+function mergeTwoArray(arr1, arr2) {
+   let i = 0;
+   let j = 0;
+   let result = [];
+
+   while (i < arr1.length && j < arr2.length) {
+      if (arr1[i] < arr2[j]) {
+         result.push(arr1[i]);
+         i++;
+      } else {
+         result.push(arr2[j]);
+         j++;
+      }
+   }
+   while (i < arr1.length) {
+      result.push(arr1[i]);
+      i++;
+   }
+   while (j < arr2.length) {
+      result.push(arr2[j]);
+      j++;
+   }
+   return result;
+}
+console.log(mergeTwoArray([1, 3, 5], [2, 4, 6]));
 
 // 6. 3 Sum – Find Triplets With Zero Sum
 // Input:  [-1,0,1,2,-1,-4]
