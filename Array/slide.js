@@ -53,13 +53,36 @@ function avreageofSubArray(arr = [1, 3, 2, 6, -1, 4, 1, 8, 2], k = 5) {
 // k = 3
 // Output:
 // [-1, -1, -7, -15, -15, 0]
+function firstNegativeNumber(
+  arr = [12, -1, -7, 8, -15, 30, 16, 28],
+  k = 3
+) {
+  let result = [];
+
+  for (let i = k - 1; i < arr.length; i++) {
+    let windowStart = i - k + 1;
+    let firstNegative = 0;
+
+    for (let j = windowStart; j <= i; j++) {
+      if (arr[j] < 0) {
+        firstNegative = arr[j];
+        break;
+      }
+    }
+
+    result.push(firstNegative);
+  }
+
+  return result;
+}
+
+console.log(firstNegativeNumber());
 
 
 
 // 4. Longest Substring Without Repeating Characters
 // Input:
 // s = "abcabcbb"
-
 // Output:
 // 3
 
@@ -67,7 +90,6 @@ function avreageofSubArray(arr = [1, 3, 2, 6, -1, 4, 1, 8, 2], k = 5) {
 // Input:
 // nums = [1, 2, 1, 0, 1, 1, 0]
 // k = 4
-
 // Output:
 // 5
 
@@ -91,6 +113,5 @@ function avreageofSubArray(arr = [1, 3, 2, 6, -1, 4, 1, 8, 2], k = 5) {
 // Input:
 // nums = [1,1,1,0,0,0,1,1,1,1,0]
 // k = 2
-
 // Output:
 // 6
