@@ -32,4 +32,17 @@ function isDuplicate(arr = [1, 2, 3, 1]) {
    }
    return false;
 }
-console.log(isDuplicate());
+// console.log(isDuplicate());
+
+function nonrepatingElemnet(arr = [4, 5, 1, 2, 1, 4]) {
+   let mp = new Map();
+   arr.forEach((elem) => mp.set(elem, (mp.get(elem) || 0) + 1));
+   console.log(Object.fromEntries(mp));
+   for (const num of arr) {
+      if (mp.get(num) === 1) {
+         return num;
+      }
+   }
+   return "NO";
+}
+// console.log(nonrepatingElemnet())
