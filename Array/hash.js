@@ -25,5 +25,11 @@ function isDuplicate(arr = [1, 2, 3, 1]) {
    let mp = new Map();
    arr.forEach((elem) => mp.set(elem, (mp.get(elem) || 0) + 1));
    console.log(Object.fromEntries(mp));
+   for (const [key, value] of mp) {
+      if (value > 1) {
+         return true;
+      }
+   }
+   return false;
 }
 console.log(isDuplicate());
