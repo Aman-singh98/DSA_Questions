@@ -46,3 +46,15 @@ function nonrepatingElemnet(arr = [4, 5, 1, 2, 1, 4]) {
    return "NO";
 }
 // console.log(nonrepatingElemnet())
+
+function twoSum(arr = [2, 7, 11, 15], target = 9) {
+   let mp = new Map();
+   for (let i = 0; i < arr.length; i++) {
+      let need = target - arr[i];
+      if (mp.has(need)) {
+         return [mp.get(need), i]
+      }
+      mp.set(arr[i], i);
+   }
+}
+console.log(twoSum());
