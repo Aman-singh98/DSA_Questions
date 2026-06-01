@@ -75,10 +75,7 @@ function firstNegativeNumber(
 
   return result;
 }
-
-console.log(firstNegativeNumber());
-
-
+// console.log(firstNegativeNumber());
 
 // 4. Longest Substring Without Repeating Characters
 // Input:
