@@ -120,5 +120,24 @@ function groupAnagrams(strs) {
    }
    return [...mp.values()];
 }
-console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
-console.log(groupAnagrams(["aab", "aba", "baa", "abbccc", "abb"]));
+// console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
+// console.log(groupAnagrams(["aab", "aba", "baa", "abbccc", "abb"]));
+
+// Longest Subarray with Equal 0s and 1s
+function findMaxLength(nums) {
+   const mp = new Map();
+   let sum = 0;
+   let maxLen = 0;
+   mp.set(0, -1); // Important
+   for (let i = 0; i < nums.length; i++) {
+      sum += nums[i] === 0 ? -1 : 1;
+      if (mp.has(sum)) {
+         maxLen = Math.max(maxLen, i - mp.get(sum));
+      } else {
+         mp.set(sum, i);
+      }
+   }
+   console.log(mp);
+   return maxLen;
+}
+console.log(findMaxLength([0, 1, 0, 1, 1, 1, 0, 0]), "findMaxLength(nums)");
