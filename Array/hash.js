@@ -105,5 +105,20 @@ function longestConf(nums) {
    }
    return longest;
 }
-console.log(longestConf([100, 4, 200, 1, 3, 2])); // 4
-console.log(longestConf([0, 3, 7, 2, 5, 8, 4, 6, 0, 1])); // 9
+// console.log(longestConf([100, 4, 200, 1, 3, 2])); // 4
+// console.log(longestConf([0, 3, 7, 2, 5, 8, 4, 6, 0, 1])); // 9
+
+// Group Anagrams Together
+function groupAnagrams(strs) {
+   const mp = new Map();
+   for (const word of strs) {
+      const key = word.split('').sort().join('');
+      if (!mp.has(key)) {
+         mp.set(key, []);
+      }
+      mp.set(key, [...(mp.get(key) || []), word]);
+   }
+   return [...mp.values()];
+}
+console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
+console.log(groupAnagrams(["aab", "aba", "baa", "abbccc", "abb"]));
