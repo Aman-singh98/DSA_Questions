@@ -140,4 +140,23 @@ function findMaxLength(nums) {
    console.log(mp);
    return maxLen;
 }
-console.log(findMaxLength([0, 1, 0, 1, 1, 1, 0, 0]), "findMaxLength(nums)");
+// console.log(findMaxLength([0, 1, 0, 1, 1, 1, 0, 0]), "findMaxLength(nums)");
+
+// Longest Subarray With Sum K
+function subarraySum(nums, k) {
+   let sum = 0;
+   let count = 0;
+   let mp = new Map();
+   mp.set(0, 1);
+   for (const num of nums) {
+      sum += num;
+      if (mp.has(sum - k)) {
+         count += mp.get(sum - k);
+      }
+
+      mp.set(sum, (mp.get(sum) || 0) + 1);
+   }
+   return count;
+}
+// console.log(subarraySum([1, 1, 1], 2)); // 2
+// console.log(subarraySum([1, 2, 3], 3)); // 2
