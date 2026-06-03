@@ -69,4 +69,18 @@ function intersection(arr1, arr2) {
    }
    return [...result];
 }
-console.log(intersection([1, 2, 2, 1], [2, 2]));
+// console.log(intersection([1, 2, 2, 1], [2, 2]));
+
+function countNeed(arr = [1, 5, 7, 1], target = 6) {
+   let mp = new Map();
+   let ans = 0;
+   for (let i = 0; i < arr.length; i++) {
+      let need = target - arr[i];
+      if (mp.has(need)) {
+         ans += mp.get(need);
+      }
+      mp.set(arr[i], (mp.get(arr[i]) || 0) + 1);
+   }
+   return ans;
+}
+// console.log(countNeed());
