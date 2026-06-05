@@ -63,7 +63,7 @@ function longestSubstringKDistinct(str, k) {
       mp.set(ch, (mp.get(ch) || 0) + 1);
 
       while (mp.size > k) {
-         mp.set(str[left], mp.get(str[left])-1);
+         mp.set(str[left], mp.get(str[left]) - 1);
 
          if (mp.get(str[left]) === 0) {
             mp.delete(str[left]);
@@ -77,3 +77,28 @@ function longestSubstringKDistinct(str, k) {
 
 // console.log(longestSubstringKDistinct("eceba", 2)); // 3
 // console.log(longestSubstringKDistinct("aa", 1));    // 2
+
+// Longest Repeating Character Replacement
+
+
+function characterReplacement(str, k) {
+   let left = 0;
+   let maxLen = 0;
+   let MaxFreq = 0;
+   let freq = {};
+
+   for (let i = 0; i < str.length; i++) {
+      let ch = str[i];
+      freq[ch] = (freq[ch] || 0) + 1;
+      maxFreq = Math.max(MaxFreq, freq[ch]);
+      while ((i - left + 1) - maxFreq > k) {
+         freq[str[left]]--;
+         left++;
+      }
+      maxLen = Math.max(maxLen, i - left + 1)
+   }
+   return maxLen;
+}
+
+console.log(characterReplacement("AABABBA", 1)); // 4
+console.log(characterReplacement("ABAB", 2));    // 4
