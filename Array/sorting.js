@@ -73,4 +73,27 @@ function mergeSort(arr) {
 
    return merge(left, right);
 }
-console.log(mergeSort([38, 27, 43, 3]));
+// console.log(mergeSort([38, 27, 43, 3]));
+
+function quickSort(arr) {
+   let n = arr.length;
+   if (n <= 1) {
+      return arr;
+   }
+
+   let pivot = arr[n - 1];
+
+   let left = [];
+   let right = [];
+
+   for (let i = 0; i < n-1; i++) {
+      if (arr[i] < pivot) {
+         left.push(arr[i]);
+      } else {
+         right.push(arr[i])
+      }
+   }
+    return [...quickSort(left), pivot, ...quickSort(right)]
+}
+
+console.log(quickSort([2, 6, 3, 8, 5]), "quick sort");
