@@ -86,14 +86,37 @@ function quickSort(arr) {
    let left = [];
    let right = [];
 
-   for (let i = 0; i < n-1; i++) {
+   for (let i = 0; i < n - 1; i++) {
       if (arr[i] < pivot) {
          left.push(arr[i]);
       } else {
          right.push(arr[i])
       }
    }
-    return [...quickSort(left), pivot, ...quickSort(right)]
+   return [...quickSort(left), pivot, ...quickSort(right)]
 }
 
-console.log(quickSort([2, 6, 3, 8, 5]), "quick sort");
+// console.log(quickSort([2, 6, 3, 8, 5]), "quick sort");
+
+function dutchNational(arr) {
+   let n = arr?.length;
+   let low = 0;
+   let mid = 0;
+   let high = n - 1;
+   while (mid <= high) {
+      if (arr[mid] === 0) {
+         [arr[low], arr[mid]] = [arr[mid], arr[low]];
+         low++;
+         mid++;
+      } else if (arr[mid] === 1) {
+         mid++;
+      } else {
+         [arr[mid], arr[high]] = [arr[high], arr[mid]];
+         high--;
+      }
+
+   }
+   return arr;
+}
+
+console.log(dutchNational([2, 0, 2, 1, 1, 0]));
