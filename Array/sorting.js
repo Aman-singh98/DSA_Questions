@@ -114,9 +114,9 @@ function dutchNational(arr) {
          [arr[mid], arr[high]] = [arr[high], arr[mid]];
          high--;
       }
-
    }
    return arr;
 }
 
-console.log(dutchNational([2, 0, 2, 1, 1, 0]));
+// console.log(dutchNational([2, 0, 2, 1, 1, 0]));
+
