@@ -84,7 +84,7 @@ module.export = mongoose.model("User", userSchema);
 // Controller
 const userSchema = require("../controller/user");
 
-async function getUser(req, res){
+async function getUser(req, res) {
    const user = await userSchema.find();
    res.status(200).json(user);
 }
@@ -94,3 +94,28 @@ const express = require("express");
 const router = express.Router();
 router.get("/users", getUser);
 module.export = router;
+
+async function fetchUsers() {
+   try {
+      const response = await fetch("https:// Add here API route", {
+         method: 'POST',
+         headers: {},
+         body: {}
+      });
+      const data = await response.json();
+      console.log(data)
+   }
+   catch {
+      console.log("Error");
+   }
+}
+
+fetch("https:// Add here API route", {
+         method: 'POST',
+         headers: {},
+         body: {}
+      }).then(()=> response.json()).then((data) => setUsers(data))
+
+      const arr =[1,1,2,3,4,4];
+      const uniqueArr = [...new Set(arr)];
+
